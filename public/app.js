@@ -81,30 +81,7 @@ function createContainer(containerData) {
       <input placeholder="Stream URL" class="w-full p-2 border rounded-lg stream-url" value="${streamUrl}">
     </div>
     <div class="mt-4 grid grid-cols-3 gap-4">
-      <div>
-        <label class="block text-sm font-medium mb-2 text-gray-700">Bitrate (kbps)</label>
-        <input type="number" class="w-full p-2 border rounded-lg bitrate" value="${bitrate}" min="1000" max="20000">
-      </div>
-      <div>
-        <label class="block text-sm font-medium mb-2 text-gray-700">Resolusi</label>
-        <select class="w-full p-2 border rounded-lg resolution">
-          <option value="480:360">360p</option>
-          <option value="854:480">480p</option>
-          <option value="1280:720">720p</option>
-          <option value="1920:1080" selected>1080p</option>
-          <option value="2560:1440">2K</option>
-          <option value="3840:2160">4K</option>
-        </select>
-      </div>
-      <div>
-        <label class="block text-sm font-medium mb-2 text-gray-700">FPS</label>
-        <select class="w-full p-2 border rounded-lg fps">
-          <option value="24">24fps</option>
-          <option value="30" selected>30fps</option>
-          <option value="60">60fps</option>
-          <option value="120">120fps</option>
-        </select>
-      </div>
+     
     </div>
     <div class="pt-3"><hr></div>
     <div class="mt-4 flex justify-between items-center">

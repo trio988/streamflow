@@ -307,22 +307,10 @@ app.post('/start-stream', uploadVideo.single('video'), async (req, res) => {
     const command = ffmpeg(newFilePath)
       .inputFormat('mp4')
       .inputOptions(['-re', ...(loop === 'true' ? ['-stream_loop -1'] : [])])
-      .outputOptions([
-        `-r ${fps || 30}`,
-        '-threads 2',
-        '-x264-params "nal-hrd=cbr"',
-        '-c:v libx264',
-        '-preset veryfast',
-        '-tune zerolatency',
-        `-b:v ${bitrate}k`,
-        `-maxrate ${bitrate}k`,
-        `-bufsize ${bitrate * 2}k`,
-        '-pix_fmt yuv420p',
-        '-g 60',
-        `-vf scale=${resolution}`,
-        '-c:a aac',
-        '-b:a 128k',
-        '-ar 44100',
+      .outputOptions([ 
+        '-threads 2', 
+        '-c:v copy', 
+        '-c:a copy', 
         '-f flv'
       ]);
 
